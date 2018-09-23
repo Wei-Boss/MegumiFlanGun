@@ -1,0 +1,22 @@
+AdminHelp:
+- '/gun get <template id> <amount> - &b获得模板物品'
+- '/gun give <player> <template id> <amount> - &b给予玩家模板物品'
+- '/gun attr - 查看所有属性'
+- '/gun attr <属性> <数值> - 给手中武器添加属性'
+Message:
+  NoPermission: '&c没有权限: %s%'
+  InvalidTemplate: '&c获取物品失败,请检查是否有该物品模板'
+  InvalidValue: '&c无效值: %s%'
+  OfflinePlayer: '&c该玩家不在线'
+  NeedBind: '&b请打开背包右键 %item% 绑定后使用'
+  IllegalUser: '&b你不是 %item% 该物品的绑定者'
+  UnableDrop: '&c你无法丢弃绑定后的物品'
+  SuccessBind: '&a物品绑定成功'
+  LevelLimit: '&c你的等级未达到 %item% 的使用限制'
+  NoTransferable: '&c该物品无法交易'
+  Kill: '%player% 被 %killer% 使用 %item% 杀死'
+Combat:
+  Damage: '&c&l-%value%❤'
+  Dodge: '&e闪避'
+  Crit: '&6&l暴击 &c&l-%value%❤'
+  Block: '&7&l格挡 &c&l-%value%❤'

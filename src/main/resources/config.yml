@@ -1,0 +1,91 @@
+Prefix: '[MegumiFlanGun]'
+Config:
+  PreviewDisplay: '&8&l[预览效果&8&l]'
+  MaxVampire: 20
+  #吸血属性最大值,吸血量无法超过这个值
+  Lore:
+    NotTransferable: '&e&l[&c&l!&e&l] &7禁止交易'
+    LevelLimit: '&e&l[&c&l!&e&l] &b&oLv.%s% &3级以上可以使用'
+    StatTrak: '&c该物品具有 StatTrak? 技术'
+    StatTrakStat: '&cStatTrak? 已认证杀敌数: %value%'
+    StatTrakTag: '(StatTrak?)'
+    WearValue: '&3磨损: %value%'
+  TransferableBlackList:
+  #禁止交易物品的命令黑名单
+  - /help
+  Attribute:
+    Prefix: '&a∵ &3'
+    Part: '&f: '
+    Positive: '&a+'
+    Negative: '&c'
+    Rate: '%'
+Formats:
+  Health: '血量'
+  Damage: '物理伤害'
+  Defense: '物理防御'
+  IgnoreDamage: '无视伤害'
+  IgnoreDefense: '无视防御'
+  Vampire: '吸血'
+  HitChance: '命中率'
+  DodgeChance: '闪避率'
+  WreckChance: '破击率'
+  BlockChance: '格挡率'
+  BlockRate: '格挡强度'
+  CritChance: '暴击率'
+  CritRate: '暴击强度'
+  AntiknockChance: '抗爆率'
+  MovementSpeed: '移动速度'
+SoulBound:
+  UnBound: '&e&l[&c&l!&e&l] &7请绑定后使用'
+  Bound: '&6灵魂绑定: &7&o%s%'
+  OpLock: false
+  #op是否无视灵魂绑定
+  DeathDrop: false
+  #死亡后是否掉落绑定物品
+  Bind:
+    OnItemDrop: true
+    #绑定物品是否禁止丢弃
+    OnItemPickup: true
+    #绑定物品是否禁止非本人捡起
+    OnItemClick: true
+    #绑定物品是否禁止非本人点击
+    OnItemInteract: true
+    #绑定物品是否禁止非主人使用
+Wear:
+#磨损机制
+#在Min和Max之间随机取磨损值
+  FactoryNew:
+    Name: '&8&l[&e崭新出厂&8&l]'
+    #磨损名称
+    Min: 0
+    #磨损最小值
+    Max: 0.0699999
+    #磨损最大值
+  MinimalWear:
+    Name: '&8&l[&b略有磨损&8&l]'
+    Min: 0.07
+    Max: 0.14999
+  FieldTested:
+    Name: '&8&l[&a久经沙场&8&l]'
+    Min: 0.15
+    Max: 0.37999
+  WellWorn:
+    Name: '&8&l[&3破碎不堪&8&l]'
+    Min: 0.38
+    Max: 0.44999
+  BattleScarred:
+    Name: '&8&l[&7战痕累累&8&l]'
+    Min: 0.45
+    Max: 1
+Gui:
+  SoulBound:
+    Title: '&7&l[&c&l灵魂绑定&7&l]'
+    Confirm:
+      ID: 1
+      Data: 0
+      Name: '&8&l[&a确认&8&l]'
+      Lore:
+      - 'Confirm Bind'
+    Other:
+      ID: 160
+      Data: 11

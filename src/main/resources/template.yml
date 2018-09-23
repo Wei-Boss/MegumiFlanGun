@@ -1,0 +1,69 @@
+ID: template
+Name: '&fAK-47'
+Suffix: '&e燃料喷射器'
+LevelLimit: '0:10'
+Item:
+  ID: 4525
+  Data: 0
+  Display: '%wear% %name% %stattrak% &f| %suffix%'
+  Lore:
+  - '&a物品信息:'
+  - ''
+  - '%levellimit%'
+  - '%nottransferable%'
+  - '%soulbound%'
+  - '%stattrak%'
+  - '%wearvalue%'
+  - ''
+  - '&a武器属性:'
+  - ''
+  - '%health%'
+  - '%damage%'
+  - '%defense%'
+  - '%ignoredamage%'
+  - '%ignoredefense%'
+  - '%vampire%'
+  - '%hitchance%'
+  - '%wreckchance%'
+  - '%dodgechance%'
+  - '%blockchance%'
+  - '%blockrate%'
+  - '%critchance%'
+  - '%critrate%'
+  - '%antiknockchance%'
+  - '%movementspeed%'
+Attribute:
+#属性值
+#格式: '最小值:最大值'
+#如果不需要这个属性,在上面 Lore 处删除对应变量即可
+  Health: '50:80'
+  Damage: '0:10'
+  Defense: '0:10'
+  IgnoreDamage: '-10:20'
+  IgnoreDefense: '-10:-5'
+  Vampire: '10:20'
+  HitChance: '10:20'
+  DodgeChance: '10:20'
+  WreckChance: '6:8'
+  BlockChance: '5:10'
+  BlockRate: '5:10'
+  CritChance: '90:100'
+  CritRate: '5:8'
+  AntiknockChance: '8:16'
+  MovementSpeed: '30:40'
+Feature:
+#功能启用
+  StatTrak: true
+  #暗金
+  NotTransferable: true
+  #禁止交易
+  Soulbound: true
+  #灵魂绑定
+Wear:
+#所有磨损度的随机值,数值越大,抽中这个磨损值的几率越大
+#如果不想要出现这个磨损,设置为0即可
+  FactoryNew: 0.2
+  MinimalWear: 0.3
+  FieldTested: 0.5
+  WellWorn: 0.7
+  BattleScarred: 0.7

@@ -1,0 +1,9 @@
+name: MegumiFlanItem
+main: com.weiboss.megumi.megumiflangun.Main
+softdepend: [HolographicDisplays]
+version: 1.6-beta
+author: Wei_Boss
+
+commands:
+  gun:
+    description: show all command
