@@ -30,6 +30,15 @@ public class RegularUtil {
         return (matcherA.matches() || matcherB.matches());
     }
 
+    public static Boolean isCritRate(String s) {
+        String regular = filter(Config.Attr.Prefix + "%attr%" + Config.Attr.Part + Config.Attr.Multiply + "%value%")
+                .replace("%attr%", "(\\S+)")
+                .replace("%value%", "([+]?[.\\d]+)");
+        Pattern pattern = Pattern.compile(regular);
+        Matcher matcher = pattern.matcher(filter(s));
+        return matcher.matches();
+    }
+
     /*判断字符串是否为等级限制格式*/
     public static Boolean isLevelLimit(String s) {
         String regular = filter(Config.Lore.LevelLimit).replace("%s%", "(\\d+)");

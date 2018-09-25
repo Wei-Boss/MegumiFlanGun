@@ -47,12 +47,8 @@ public class FlanGun {
                     if (RegularUtil.isSoulBound(s)) {
                         if (p != null && !p.getName().equalsIgnoreCase(FlanGunUtil.getSoulBound(s))) continue forItem;
                     }
-                    if (RegularUtil.isAttribute(s)) {
-                        s = s
-                                .replace(Config.Attr.Prefix, "")
-                                .replace(Config.Attr.Positive, "")
-                                .replace(Config.Attr.Negative, "")
-                                .replace(Config.Attr.Rate, "");
+                    if (RegularUtil.isAttribute(s) || RegularUtil.isCritRate(s)) {
+                        s = clear(s);
                         String attribute = s.split(Config.Attr.Part)[0];
                         String value = s.split(Config.Attr.Part)[1];
                         Attribute attr = FlanGunUtil.getAttrType(attribute);
@@ -96,7 +92,7 @@ public class FlanGun {
                                 attrData.addCritChance(f / 100);
                                 break;
                             case CritRate:
-                                attrData.addCritRate(f / 100);
+                                attrData.addCritRate(f);
                                 break;
                             case AntiknockChance:
                                 attrData.addAntiKnockChance(f / 100);
@@ -130,7 +126,7 @@ public class FlanGun {
         if (meta.getLore() == null || meta.getLore().size() == 0) return;
         for (String s : meta.getLore()) {
             try {
-                if (!RegularUtil.isAttribute(s)) {
+                if (!(RegularUtil.isAttribute(s) || RegularUtil.isCritRate(s))) {
                     if (s.equalsIgnoreCase(Config.Lore.NotTransferable)) {
                         this.trade = true;
                         continue;
@@ -157,11 +153,7 @@ public class FlanGun {
                     }
                     continue;
                 }
-                s = s
-                        .replace(Config.Attr.Prefix, "")
-                        .replace(Config.Attr.Positive, "")
-                        .replace(Config.Attr.Negative, "")
-                        .replace(Config.Attr.Rate, "");
+                s = clear(s);
                 String attribute = s.split(Config.Attr.Part)[0];
                 String value = s.split(Config.Attr.Part)[1];
                 Attribute attr = FlanGunUtil.getAttrType(attribute);
@@ -205,7 +197,7 @@ public class FlanGun {
                         attrData.addCritChance(f/100);
                         break;
                     case CritRate:
-                        attrData.addCritRate(f/100);
+                        attrData.addCritRate(f);
                         break;
                     case AntiknockChance:
                         attrData.addAntiKnockChance(f/100);
@@ -254,5 +246,14 @@ public class FlanGun {
 
     public void setAttrData(AttrData attrData) {
         this.attrData = attrData;
+    }
+
+    private String clear(String s) {
+        return s
+                .replace(Config.Attr.Prefix, "")
+                .replace(Config.Attr.Rate, "")
+                .replace(Config.Attr.Negative, "")
+                .replace(Config.Attr.Positive, "")
+                .replace(Config.Attr.Multiply, "");
     }
 }

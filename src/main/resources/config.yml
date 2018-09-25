@@ -18,6 +18,7 @@ Config:
     Part: '&f: '
     Positive: '&a+'
     Negative: '&c'
+    Multiply: '&3x'
     Rate: '%'
 Formats:
   Health: '血量'

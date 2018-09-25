@@ -15,8 +15,8 @@ public enum  Attribute {
     WreckChance("WreckChance", Main.getInstance().getFileManager().getAttrName("WreckChance"), true),
     BlockChance("BlockChance", Main.getInstance().getFileManager().getAttrName("BlockChance"), true),
     BlockRate("BlockRate", Main.getInstance().getFileManager().getAttrName("BlockRate"), true),
-    CritChance("CritChance", Main.getInstance().getFileManager().getAttrName("Damage"), true),
-    CritRate("CritRate", Main.getInstance().getFileManager().getAttrName("CritChance"), true),
+    CritChance("CritChance", Main.getInstance().getFileManager().getAttrName("CritChance"), true),
+    CritRate("CritRate", Main.getInstance().getFileManager().getAttrName("CritRate"), true),
     AntiknockChance("AntiknockChance", Main.getInstance().getFileManager().getAttrName("AntiknockChance"), true),
     MovementSpeed("MovementSpeed", Main.getInstance().getFileManager().getAttrName("MovementSpeed"), true);
 

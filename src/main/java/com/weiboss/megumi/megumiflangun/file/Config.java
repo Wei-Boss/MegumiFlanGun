@@ -33,6 +33,7 @@ public class Config {
         public final static String Part = WeiUtil.onReplace(config.getString("Config.Attribute.Part"));
         public final static String Positive = WeiUtil.onReplace(config.getString("Config.Attribute.Positive"));
         public final static String Negative = WeiUtil.onReplace(config.getString("Config.Attribute.Negative"));
+        public final static String Multiply = WeiUtil.onReplace(config.getString("Config.Attribute.Multiply"));
         public final static String Rate = WeiUtil.onReplace(config.getString("Config.Attribute.Rate"));
     }
 

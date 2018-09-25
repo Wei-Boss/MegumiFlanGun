@@ -1,5 +1,10 @@
 package com.weiboss.megumi.megumiflangun.flan.data;
 
+import org.bukkit.Bukkit;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class AttrData {
     private double health;
     private double damage;
@@ -245,5 +250,27 @@ public class AttrData {
 
     public double getMovementSpeed() {
         return movementSpeed;
+    }
+
+    public void showInfo() {
+        HashMap<String, Double> map = new HashMap<>();
+        map.put("Health", health);
+        map.put("Damage", damage);
+        map.put("Defense", defense);
+        map.put("IgnoreDamage", ignoreDamage);
+        map.put("IgnoreDefense", ignoreDefense);
+        map.put("Vampire", vampire);
+        map.put("HitChance", hitChance);
+        map.put("DodgeChance", dodgeChance);
+        map.put("WreckChance", wreckChance);
+        map.put("BlockChance", blockChance);
+        map.put("BlockRate", blockRate);
+        map.put("CritChance", critChance);
+        map.put("CritRate", critRate);
+        map.put("AntiKnockCHance", antiKnockChance);
+        map.put("Speed", movementSpeed);
+        for (Map.Entry<String, Double> info : map.entrySet()) {
+            Bukkit.getConsoleSender().sendMessage(info.getKey() + ": " + info.getValue());
+        }
     }
 }

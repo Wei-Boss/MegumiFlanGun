@@ -74,17 +74,24 @@ public class FlanGunUtil {
                 .append(Config.Attr.Prefix)
                 .append(lore)
                 .append(Config.Attr.Part);
-        if (value >= 0)
+        if (attribute != Attribute.CritRate) {
+            if (value >= 0)
+                builder
+                        .append(Config.Attr.Positive)
+                        .append(value);
+            else
+                builder
+                        .append(Config.Attr.Negative)
+                        .append(value);
+            if (rate)
+                builder
+                        .append(Config.Attr.Rate);
+        }
+        else {
             builder
-                    .append(Config.Attr.Positive)
+                    .append(Config.Attr.Multiply)
                     .append(value);
-        else
-            builder
-                    .append(Config.Attr.Negative)
-                    .append(value);
-        if (rate)
-            builder
-                    .append(Config.Attr.Rate);
+        }
         return builder.toString();
     }
 
