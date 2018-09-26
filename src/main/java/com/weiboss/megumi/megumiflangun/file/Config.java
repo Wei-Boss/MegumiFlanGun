@@ -8,7 +8,6 @@ import org.bukkit.inventory.ItemStack;
 import java.util.List;
 
 public class Config {
-
     private static YamlConfiguration getConfig() {
         return Main.getInstance().getFileManager().getConfig();
     }
@@ -21,7 +20,7 @@ public class Config {
         public final static Boolean Enable = getConfig().getBoolean("Config.Vampire.Enable");
         public final static Integer Time = getConfig().getInt("Config.Vampire.Time");
         public final static Integer Amount = getConfig().getInt("Config.Vampire.Amount");
-        public final static Integer MaxValue = getConfig().getInt("Config.Vampire.MaxValue");
+        public final static Integer MaxValue = getConfig().getInt("Config.Vampire.MaxVampire");
     }
 
     public static class Lore {

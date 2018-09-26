@@ -152,7 +152,7 @@ public class DamageListener implements Listener {
             }
             else {
                 VampireTask task = new VampireTask(attacker, vampireEvent.getVampire(), Config.Vampire.Amount);
-                task.runTaskTimer(plugin, 1, 20);
+                task.runTaskTimer(plugin, 1, Config.Vampire.Time * 20);
             }
         }
 
