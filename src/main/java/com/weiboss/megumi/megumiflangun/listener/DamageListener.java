@@ -8,6 +8,7 @@ import com.weiboss.megumi.megumiflangun.file.Message;
 import com.weiboss.megumi.megumiflangun.flan.data.AttrData;
 import com.weiboss.megumi.megumiflangun.flan.data.FlanGun;
 import com.weiboss.megumi.megumiflangun.task.CombatHoloTask;
+import com.weiboss.megumi.megumiflangun.task.VampireTask;
 import com.weiboss.megumi.megumiflangun.util.ReflectionUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -144,9 +145,15 @@ public class DamageListener implements Listener {
         MegumiVampireEvent vampireEvent = new MegumiVampireEvent(attacker, victim, vampire);
         Bukkit.getPluginManager().callEvent(vampireEvent);
         if (!vampireEvent.isCancel()) {
-            double heath = attacker.getHealth() + vampireEvent.getVampire();
-            if (heath > attacker.getMaxHealth()) attacker.setHealth(attacker.getMaxHealth());
-            else attacker.setHealth(heath);
+            if (!Config.Vampire.Enable) {
+                double heath = attacker.getHealth() + vampireEvent.getVampire();
+                if (heath > attacker.getMaxHealth()) attacker.setHealth(attacker.getMaxHealth());
+                else attacker.setHealth(heath);
+            }
+            else {
+                VampireTask task = new VampireTask(attacker, vampireEvent.getVampire(), Config.Vampire.Amount);
+                task.runTaskTimer(plugin, 1, Config.Vampire.Time * 20);
+            }
         }
 
         e.setDamage(lastDamage);
@@ -163,8 +170,8 @@ public class DamageListener implements Listener {
     }
 
     private double limitVampire(double value) {
-        if (value <= Config.MaxVampire) return value;
-        else return Config.MaxVampire;
+        if (value <= Config.Vampire.MaxValue) return value;
+        else return Config.Vampire.MaxValue;
     }
 
     private void sendHoloMsg(Location location, String message) {
