@@ -1,8 +1,15 @@
 Prefix: '[MegumiFlanGun]'
 Config:
   PreviewDisplay: '&8&l[预览效果&8&l]'
-  MaxVampire: 20
-  #吸血属性最大值,吸血量无法超过这个值
+  Vampire:
+    Enable: false
+    #是否开启持续吸血恢复(在一定时间内恢复所有吸血值)
+    Time: 1
+    #多少秒恢復一次(持续吸血)
+    Amount: 10
+    #恢复次数(持续吸血)
+    MaxValue: 20
+    #吸血属性最大值,吸血量无法超过这个值
   Lore:
     NotTransferable: '&e&l[&c&l!&e&l] &7禁止交易'
     LevelLimit: '&e&l[&c&l!&e&l] &b&oLv.%s% &3级以上可以使用'
