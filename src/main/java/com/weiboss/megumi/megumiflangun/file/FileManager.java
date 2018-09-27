@@ -9,10 +9,7 @@ import com.weiboss.megumi.megumiflangun.util.WeiUtil;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class FileManager {
     private Main plugin;
@@ -38,13 +35,19 @@ public class FileManager {
                 WeiUtil.copyFile(plugin.getResource("config.yml"), configFile);
                 plugin.getLogger().info("File: Create config.yml file successfully");
             }
-            else plugin.getLogger().info("File: Load config.yml file successfully");
+            else {
+                updateConfig();
+                plugin.getLogger().info("File: Load config.yml file successfully");
+            }
             if (!messageFile.exists()) {
                 messageFile.getParentFile().mkdirs();
                 WeiUtil.copyFile(plugin.getResource("message.yml"), messageFile);
                 plugin.getLogger().info("File: Create message.yml file successfully");
             }
-            else plugin.getLogger().info("File: Load message.yml file successfully");
+            else {
+                updateMessage();
+                plugin.getLogger().info("File: Load message.yml file successfully");
+            }
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -109,6 +112,112 @@ public class FileManager {
         }
         catch (Exception e) {
             plugin.getLogger().info("Failed to read template %s%, please check the template file!".replace("%s%", tID));
+            e.printStackTrace();
+        }
+    }
+
+    private void updateConfig() {
+        config.addDefault("Prefix", "[MegumiFlanGun]");
+        config.addDefault("Config.PreviewDisplay", "&8&l[预览效果&8&l]");
+        config.addDefault("Config.Vampire.Enable", false);
+        config.addDefault("Config.Vampire.Time", 1);
+        config.addDefault("Config.Vampire.Amount", 10);
+        config.addDefault("Config.Vampire.MaxValue", 20);
+        config.addDefault("Config.NotTransferable", "&e&l[&c&l!&e&l] &7禁止交易");
+        config.addDefault("Config.LevelLimit", "&e&l[&c&l!&e&l] &b&oLv.%s% &3级以上可以使用");
+        config.addDefault("Config.StatTrak", "&c该物品具有 StatTrak™ 技术");
+        config.addDefault("Config.StatTrakStat", "&cStatTrak? 已认证杀敌数: %value%");
+        config.addDefault("Config.StatTrakTag", "(StatTrak™)");
+        config.addDefault("Config.WearValue", "&3磨损: %value%");
+        config.addDefault("Config.TransferableBlackList", Collections.singletonList("/help"));
+        config.addDefault("Config.Attribute.Prefix", "&a∵ &3");
+        config.addDefault("Config.Attribute.Part", "&f: ");
+        config.addDefault("Config.Attribute.Positive", "&a+");
+        config.addDefault("Config.Attribute.Negative", "&c");
+        config.addDefault("Config.Attribute.Multiply", "&3x");
+        config.addDefault("Config.Attribute.Rate","%");
+        config.addDefault("Formats.Health", "血量");
+        config.addDefault("Formats.Damage", "物理伤害");
+        config.addDefault("Formats.Defense", "物理防御");
+        config.addDefault("Formats.IgnoreDamage", "无视伤害");
+        config.addDefault("Formats.IgnoreDefense", "无视防御");
+        config.addDefault("Formats.Vampire", "吸血");
+        config.addDefault("Formats.HitChance", "命中率");
+        config.addDefault("Formats.DodgeChance", "闪避率");
+        config.addDefault("Formats.WreckChance", "破击率");
+        config.addDefault("Formats.BlockChance", "格挡率");
+        config.addDefault("Formats.BlockRate", "格挡强度");
+        config.addDefault("Formats.CritChance", "暴击率");
+        config.addDefault("Formats.CritRate", "暴击强度");
+        config.addDefault("Formats.AntiknockChance", "抗爆率");
+        config.addDefault("Formats.MovementSpeed", "移动速度");
+        config.addDefault("SoulBound.UnBound", "&e&l[&c&l!&e&l] &7请绑定后使用");
+        config.addDefault("SoulBound.Bound", "&6灵魂绑定: &7&o%s%");
+        config.addDefault("SoulBound.OpLock", false);
+        config.addDefault("SoulBound.DeathDrop", false);
+        config.addDefault("SoulBound.Bind.OnItemDrop", true);
+        config.addDefault("SoulBound.Bind.OnItemPickup", true);
+        config.addDefault("SoulBound.Bind.OnItemClick", true);
+        config.addDefault("SoulBound.Bind.OnItemInteract", true);
+        config.addDefault("Wear.FactoryNew.Name", "&8&l[&e崭新出厂&8&l]");
+        config.addDefault("Wear.FactoryNew.Min", 0);
+        config.addDefault("Wear.FactoryNew.Max", 0.0699999);
+        config.addDefault("Wear.MinimalWear.Name", "&8&l[&b略有磨损&8&l]");
+        config.addDefault("Wear.MinimalWear.Min", 0.07);
+        config.addDefault("Wear.MinimalWear.Max", 0.14999);
+        config.addDefault("Wear.FieldTested.Name", "&8&l[&a久经沙场&8&l]");
+        config.addDefault("Wear.FieldTested.Min", 0.15);
+        config.addDefault("Wear.FieldTested.Max", 0.37999);
+        config.addDefault("Wear.WellWorn.Name", "&8&l[&3破碎不堪&8&l]");
+        config.addDefault("Wear.WellWorn.Min", 0.38);
+        config.addDefault("Wear.WellWorn.Max", 0.44999);
+        config.addDefault("Wear.BattleScarred.Name", "&8&l[&7战痕累累&8&l]");
+        config.addDefault("Wear.BattleScarred.Min", 0.45);
+        config.addDefault("Wear.BattleScarred.Max", 1);
+        config.addDefault("Gui.SoulBound.Title", "&7&l[&c&l灵魂绑定&7&l]");
+        config.addDefault("Gui.SoulBound.Confirm.ID", 1);
+        config.addDefault("Gui.SoulBound.Confirm.Data", 0);
+        config.addDefault("Gui.SoulBound.Confirm.Name", "&8&l[&a确认&8&l]");
+        config.addDefault("Gui.SoulBound.Confirm.Lore", Collections.singletonList("Confirm Bind"));
+        config.addDefault("Gui.SoulBound.Other.ID", 160);
+        config.addDefault("Gui.SoulBound.Other.Data", 11);
+        try {
+            config.load(configFile);
+            config.options().copyDefaults(true);
+            config.save(configFile);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void updateMessage() {
+        message.addDefault("AdminHelp", Arrays.asList(
+                "/gun get <template id> <amount> - &b获得模板物品",
+                "/gun give <player> <template id> <amount> - &b给予玩家模板物品",
+                "/gun attr - 查看所有属性",
+                "/gun attr <属性> <数值> - 给手中武器添加属性"));
+        message.addDefault("Message.NoPermission", "&c没有权限: %s%");
+        message.addDefault("Message.InvalidTemplate", "&c获取物品失败,请检查是否有该物品模板");
+        message.addDefault("Message.InvalidValue", "&c无效值: %s%");
+        message.addDefault("Message.OfflinePlayer", "&c该玩家不在线");
+        message.addDefault("Message.NeedBind", "&b请打开背包右键 %item% 绑定后使用");
+        message.addDefault("Message.IllegalUser", "&b你不是 %item% 该物品的绑定者");
+        message.addDefault("Message.UnableDrop", "&c你无法丢弃绑定后的物品");
+        message.addDefault("Message.SuccessBind", "&a物品绑定成功");
+        message.addDefault("Message.LevelLimit", "&c你的等级未达到 %item% 的使用限制");
+        message.addDefault("Message.NoTransferable", "&c该物品无法交易");
+        message.addDefault("Message.Kill", "%player% 被 %killer% 使用 %item% 杀死");
+        message.addDefault("Combat.Damage", "&c&l-%value%❤");
+        message.addDefault("Combat.Dodge", "&e闪避");
+        message.addDefault("Combat.Crit", "&6&l暴击 &c&l-%value%❤");
+        message.addDefault("Combat.Block", "&7&l格挡 &c&l-%value%❤");
+        try {
+            message.load(messageFile);
+            message.options().copyDefaults(true);
+            message.save(messageFile);
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
     }

@@ -2,7 +2,6 @@ package com.weiboss.megumi.megumiflangun;
 
 import com.weiboss.megumi.megumiflangun.command.MainCommand;
 import com.weiboss.megumi.megumiflangun.file.FileManager;
-import com.weiboss.megumi.megumiflangun.file.Message;
 import com.weiboss.megumi.megumiflangun.flan.MyPluginManager;
 import com.weiboss.megumi.megumiflangun.gui.GuiManager;
 import com.weiboss.megumi.megumiflangun.listener.EventManager;
