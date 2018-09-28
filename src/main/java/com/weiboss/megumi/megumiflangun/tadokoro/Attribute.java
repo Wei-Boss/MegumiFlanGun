@@ -3,6 +3,9 @@ package com.weiboss.megumi.megumiflangun.tadokoro;
 
 import com.weiboss.megumi.megumiflangun.Main;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public enum  Attribute {
     Health("Health", Main.getInstance().getFileManager().getAttrName("Health"), false),
     Damage("Damage", Main.getInstance().getFileManager().getAttrName("Damage"), false),
@@ -28,6 +31,14 @@ public enum  Attribute {
         this.type = type;
         this.lore = lore;
         this.rate = rate;
+    }
+
+    public static List<String> getAttribute() {
+        List<String> attr = new ArrayList<>();
+        for (Attribute attribute : values()) {
+            attr.add(attribute.getType());
+        }
+        return attr;
     }
 
     public String getType() {

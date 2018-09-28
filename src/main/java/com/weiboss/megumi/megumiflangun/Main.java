@@ -5,6 +5,7 @@ import com.weiboss.megumi.megumiflangun.file.FileManager;
 import com.weiboss.megumi.megumiflangun.flan.MyPluginManager;
 import com.weiboss.megumi.megumiflangun.gui.GuiManager;
 import com.weiboss.megumi.megumiflangun.listener.EventManager;
+import com.weiboss.megumi.megumiflangun.command.MainComplete;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -33,6 +34,7 @@ public class Main extends JavaPlugin {
         myPluginManager.init();
         eventManager.init();
         getCommand("gun").setExecutor(new MainCommand());
+        getCommand("gun").setTabCompleter(new MainComplete(this));
         getLogger().info("Loaded successfully");
     }
 

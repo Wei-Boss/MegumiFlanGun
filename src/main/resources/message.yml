@@ -1,6 +1,6 @@
 AdminHelp:
 - '/gun get <template id> <amount> - &b获得模板物品'
-- '/gun give <player> <template id> <amount> - &b给予玩家模板物品'
+- '/gun give <template id> <player> <amount> - &b给予玩家模板物品'
 - '/gun attr - 查看所有属性'
 - '/gun attr <属性> <数值> - 给手中武器添加属性'
 Message:

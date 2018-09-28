@@ -19,8 +19,8 @@ public class GiveCommand extends WeiCommand {
     @Override
     public void perform(CommandSender CommandSender, String[] Strings) {
         if (Strings.length != 4) return;
-        String player = Strings[1];
-        String id = Strings[2];
+        String id = Strings[1];
+        String player = Strings[2];
         String amount = Strings[3];
         OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(player);
         if (!offlinePlayer.isOnline()) {
