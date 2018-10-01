@@ -18,12 +18,20 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.inventory.ItemStack;
 
 import java.text.DecimalFormat;
+import java.util.HashMap;
 
 public class DamageListener implements Listener {
-    private Main plugin = Main.getInstance();
+    private Main plugin;
+    private HashMap<LivingEntity, Integer> vampireTask;
+
+    public DamageListener() {
+        plugin = Main.getInstance();
+        vampireTask = new HashMap<>();
+    }
 
     @EventHandler
     public void onDamage(EntityDamageByEntityEvent e) {
@@ -151,12 +159,27 @@ public class DamageListener implements Listener {
                 else attacker.setHealth(heath);
             }
             else {
+                if (vampireTask.containsKey(attacker)) {
+                    Bukkit.getScheduler().cancelTask(vampireTask.get(attacker));
+                }
                 VampireTask task = new VampireTask(attacker, vampireEvent.getVampire(), Config.Vampire.Amount);
                 task.runTaskTimer(plugin, 1, Config.Vampire.Time * 20);
+                vampireTask.put(attacker, task.getTaskId());
             }
         }
 
         e.setDamage(lastDamage);
+    }
+
+    @EventHandler
+    public void onDeath(EntityDeathEvent e) {
+        Entity entity = e.getEntity();
+        if (entity == null) return;
+        Integer id = vampireTask.get(entity);
+        if (id != null) {
+            Bukkit.getScheduler().cancelTask(id);
+            vampireTask.remove(entity);
+        }
     }
 
     private double limit1(double value) {

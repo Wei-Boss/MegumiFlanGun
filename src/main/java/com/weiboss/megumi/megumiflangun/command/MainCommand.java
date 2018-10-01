@@ -17,6 +17,7 @@ public class MainCommand implements CommandExecutor {
         this.commands.put("get", new GetCommand());
         this.commands.put("give", new GiveCommand());
         this.commands.put("attr", new AttrCommand());
+        this.commands.put("reload", new ReloadCommand());
         this.commands.put("test", new TestCommand());
     }
 
