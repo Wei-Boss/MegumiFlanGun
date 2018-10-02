@@ -125,6 +125,6 @@ public class SoulBoundListener implements Listener {
 
     private void check(Player p) {
         CheckEquipTask task = new CheckEquipTask(p);
-        task.runTaskLater(plugin, 1);
+        task.runTaskLaterAsynchronously(plugin, 1);
     }
 }
