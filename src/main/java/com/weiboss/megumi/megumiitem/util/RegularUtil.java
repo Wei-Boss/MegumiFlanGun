@@ -1,6 +1,6 @@
-package com.weiboss.megumi.megumiflangun.util;
+package com.weiboss.megumi.megumiitem.util;
 
-import com.weiboss.megumi.megumiflangun.file.Config;
+import com.weiboss.megumi.megumiitem.file.Config;
 import org.bukkit.ChatColor;
 
 import java.util.regex.Matcher;

@@ -1,6 +1,6 @@
-package com.weiboss.megumi.megumiflangun.listener;
+package com.weiboss.megumi.megumiitem.listener;
 
-import com.weiboss.megumi.megumiflangun.Main;
+import com.weiboss.megumi.megumiitem.Main;
 import org.bukkit.Bukkit;
 
 public class EventManager {

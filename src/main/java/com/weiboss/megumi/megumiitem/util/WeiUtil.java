@@ -1,6 +1,6 @@
-package com.weiboss.megumi.megumiflangun.util;
+package com.weiboss.megumi.megumiitem.util;
 
-import com.weiboss.megumi.megumiflangun.Main;
+import com.weiboss.megumi.megumiitem.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;

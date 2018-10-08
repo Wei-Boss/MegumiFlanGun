@@ -1,6 +1,6 @@
-package com.weiboss.megumi.megumiflangun.gui;
+package com.weiboss.megumi.megumiitem.gui;
 
-import com.weiboss.megumi.megumiflangun.Main;
+import com.weiboss.megumi.megumiitem.Main;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 

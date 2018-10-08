@@ -1,16 +1,13 @@
-package com.weiboss.megumi.megumiflangun.flan;
+package com.weiboss.megumi.megumiitem.core;
 
-import com.weiboss.megumi.megumiflangun.Main;
-import com.weiboss.megumi.megumiflangun.tadokoro.Attribute;
-import com.weiboss.megumi.megumiflangun.constructor.Template;
-import com.weiboss.megumi.megumiflangun.tadokoro.Wear;
-import com.weiboss.megumi.megumiflangun.util.WeiUtil;
+import com.weiboss.megumi.megumiitem.Main;
+import com.weiboss.megumi.megumiitem.constructor.Template;
+import com.weiboss.megumi.megumiitem.tadokoro.Wear;
+import com.weiboss.megumi.megumiitem.util.WeiUtil;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package com.weiboss.megumi.megumiflangun.file;
+package com.weiboss.megumi.megumiitem.file;
 
-import com.weiboss.megumi.megumiflangun.Main;
-import com.weiboss.megumi.megumiflangun.util.WeiUtil;
+import com.weiboss.megumi.megumiitem.Main;
+import com.weiboss.megumi.megumiitem.util.WeiUtil;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 public class Message {
