@@ -1,12 +1,12 @@
-package com.weiboss.megumi.megumiflangun.command.sub;
+package com.weiboss.megumi.megumiitem.command.sub;
 
-import com.weiboss.megumi.megumiflangun.Main;
-import com.weiboss.megumi.megumiflangun.command.WeiCommand;
-import com.weiboss.megumi.megumiflangun.constructor.Template;
-import com.weiboss.megumi.megumiflangun.file.Config;
-import com.weiboss.megumi.megumiflangun.file.Message;
-import com.weiboss.megumi.megumiflangun.util.TemplateUtil;
-import com.weiboss.megumi.megumiflangun.util.WeiUtil;
+import com.weiboss.megumi.megumiitem.Main;
+import com.weiboss.megumi.megumiitem.command.WeiCommand;
+import com.weiboss.megumi.megumiitem.constructor.Template;
+import com.weiboss.megumi.megumiitem.file.Config;
+import com.weiboss.megumi.megumiitem.file.Message;
+import com.weiboss.megumi.megumiitem.util.TemplateUtil;
+import com.weiboss.megumi.megumiitem.util.WeiUtil;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
