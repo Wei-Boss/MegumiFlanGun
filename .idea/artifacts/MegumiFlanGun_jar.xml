@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="MegumiFlanGun:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/MegumiFlanGun_jar</output-path>
-    <root id="archive" name="MegumiFlanGun.jar">
-      <element id="module-output" name="MegumiFlanGun" />
-      <element id="dir-copy" path="$PROJECT_DIR$/src/main/resources" />
-    </root>
-  </artifact>
-</component>
