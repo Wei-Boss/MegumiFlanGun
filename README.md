@@ -1,2 +1,2 @@
-# MegumiFlanGun
-Flan Gun RPG Plugin
+# MegumiItem
+Megumi's RPG plugin
