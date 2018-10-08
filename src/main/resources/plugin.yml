@@ -1,5 +1,5 @@
 name: MegumiFlanItem
-main: com.weiboss.megumi.megumiflangun.Main
+main: com.weiboss.megumi.megumiitem.Main
 softdepend: [HolographicDisplays]
 version: 1.6-beta
 author: Wei_Boss
