@@ -56,9 +56,9 @@ public class WeiUtil {
         item.setDurability((short) data);
         ItemMeta meta = item.getItemMeta();
         if (name != null)
-            meta.setDisplayName(WeiUtil.onReplace(name));
+            meta.setDisplayName(onReplace(name));
         if (lore != null)
-            meta.setLore(WeiUtil.onReplace(lore));
+            meta.setLore(onReplace(lore));
         item.setItemMeta(meta);
         return item;
     }

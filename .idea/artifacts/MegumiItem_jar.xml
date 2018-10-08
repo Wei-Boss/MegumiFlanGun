@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MegumiItem:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MegumiItem_jar</output-path>
+    <root id="archive" name="MegumiItem.jar">
+      <element id="module-output" name="MegumiItem" />
+      <element id="dir-copy" path="$PROJECT_DIR$/src/main/resources" />
+    </root>
+  </artifact>
+</component>
