@@ -57,17 +57,19 @@ public class Config {
         public final static String SoulBound_Title = WeiUtil.onReplace(getConfig().getString("Gui.SoulBound.Title"));
         public final static ItemStack SoulBound_Confirm = WeiUtil.createItem
                 (
-                        getConfig().getInt("Gui.SoulBound.Confirm.ID"),
+                        getConfig().getString("Gui.SoulBound.Confirm.ID"),
                         getConfig().getInt("Gui.SoulBound.Confirm.Data"),
                         1,
                         getConfig().getString("Gui.SoulBound.Confirm.Name"),
-                        getConfig().getStringList("Gui.SoulBound.Confirm.Lore")
+                        getConfig().getStringList("Gui.SoulBound.Confirm.Lore"),
+                        null
                 );
         public final static ItemStack SoulBound_Other = WeiUtil.createItem
                 (
-                        getConfig().getInt("Gui.SoulBound.Other.ID"),
+                        getConfig().getString("Gui.SoulBound.Other.ID"),
                         getConfig().getInt("Gui.SoulBound.Other.Data"),
                         1,
+                        null,
                         null,
                         null
                 );

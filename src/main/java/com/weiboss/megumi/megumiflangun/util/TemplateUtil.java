@@ -18,7 +18,7 @@ public class TemplateUtil {
     private static Main plugin = Main.getInstance();
 
     public static ItemStack getItem(Template template, int amount) {
-        int id = template.getId();
+        String id = template.getId();
         int data = template.getData();
         String name = template.getName();
         String suffix = template.getSuffix();
@@ -178,7 +178,7 @@ public class TemplateUtil {
             lore.add(WeiUtil.onReplace(s));
         }
 
-        return WeiUtil.createItem(id, data, amount, display, lore);
+        return WeiUtil.createItem(id, data, amount, display, lore, null);
     }
 
     private static double reservedTwo(RangeValue range) {

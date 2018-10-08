@@ -39,12 +39,13 @@ public class DamageListener implements Listener {
         Entity entity = e.getEntity();
         if (damage.getType() == null) return;
         String type = damage.getType().toString();
-        if (!type.equals("FLANSMOD_BULLET")) return;
-        ReflectionUtil util = new ReflectionUtil(plugin.getVersion());
-        Entity owner = util.getOwner(damage);
-        if (!(owner instanceof LivingEntity && entity instanceof LivingEntity)) return;
+        if (type.equals("FLANSMOD_BULLET")) {
+            ReflectionUtil util = new ReflectionUtil(plugin.getVersion());
+            damage = util.getOwner(damage);
+            if (!(damage instanceof LivingEntity && entity instanceof LivingEntity)) return;
+        }
 
-        LivingEntity attacker = (LivingEntity) owner;
+        LivingEntity attacker = (LivingEntity) damage;
         LivingEntity victim = (LivingEntity) entity;
         Player a = attacker instanceof Player ? (Player) attacker : null;
         Player b = victim instanceof Player ? (Player) victim : null;

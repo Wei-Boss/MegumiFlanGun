@@ -1,7 +1,9 @@
 package com.weiboss.megumi.megumiflangun.util;
 
+import com.weiboss.megumi.megumiflangun.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -10,10 +12,14 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 public class WeiUtil {
+    private static Main plugin = Main.getInstance();
+
     public static String onReplace(String text) {
         return text
                 .replace("&", "§");
@@ -51,14 +57,27 @@ public class WeiUtil {
         }
     }
 
-    public static ItemStack createItem(int id, int data, int amount, String name, List<String> lore) {
-        ItemStack item = new ItemStack(Material.getMaterial(id), amount);
+    public static ItemStack createItem(String id, int data, int amount, String name, List<String> lore, HashMap<Enchantment, Integer> enchants) {
+        ItemStack item;
+        if (WeiUtil.isNumber(id)) {
+            if (plugin.getVersion().startsWith("V1_13")) return new ItemStack(Material.STONE, 1);
+            item = new ItemStack(Material.getMaterial(Integer.parseInt(id)), amount);
+        }
+        else
+            item = new ItemStack(Material.getMaterial(id), amount);
         item.setDurability((short) data);
         ItemMeta meta = item.getItemMeta();
         if (name != null)
             meta.setDisplayName(onReplace(name));
         if (lore != null)
             meta.setLore(onReplace(lore));
+        if (enchants != null) {
+            for (Map.Entry<Enchantment, Integer> map : enchants.entrySet()) {
+                Enchantment enchantment = map.getKey();
+                Integer level = map.getValue();
+                meta.addEnchant(enchantment, level, false);
+            }
+        }
         item.setItemMeta(meta);
         return item;
     }

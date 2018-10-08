@@ -7,7 +7,7 @@ public class Template {
     private String name;
     private String suffix;
     private RangeValue levelLimit;
-    private Integer id;
+    private String id;
     private Integer data;
     private String display;
     private List<String> lore;
@@ -15,7 +15,7 @@ public class Template {
     private HashMap<String, Boolean> feature;
     private List<WearRate> wears;
 
-    public Template(String name, String suffix, RangeValue levelLimit, Integer id, Integer data, String display, List<String> lore, HashMap<String, RangeValue> attributes, HashMap<String, Boolean> feature, List<WearRate> wears) {
+    public Template(String name, String suffix, RangeValue levelLimit, String id, Integer data, String display, List<String> lore, HashMap<String, RangeValue> attributes, HashMap<String, Boolean> feature, List<WearRate> wears) {
         this.name = name;
         this.suffix = suffix;
         this.levelLimit = levelLimit;
@@ -40,7 +40,7 @@ public class Template {
         return levelLimit;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 

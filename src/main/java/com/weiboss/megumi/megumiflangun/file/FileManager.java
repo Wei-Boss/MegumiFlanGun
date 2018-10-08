@@ -85,7 +85,7 @@ public class FileManager {
             String name = WeiUtil.onReplace(yaml.getString("Name"));
             String suffix = WeiUtil.onReplace(yaml.getString("Suffix"));
             String levelLimit = yaml.getString("LevelLimit");
-            Integer id = yaml.getInt("Item.ID");
+            String id = yaml.getString("Item.ID");
             Integer data = yaml.getInt("Item.Data");
             String display = WeiUtil.onReplace(yaml.getString("Item.Display"));
             List<String> lore = WeiUtil.onReplace(yaml.getStringList("Item.Lore"));
