@@ -1,7 +1,7 @@
 package com.weiboss.megumi.megumiitem.command;
 
 import com.weiboss.megumi.megumiitem.Main;
-import com.weiboss.megumi.megumiitem.tadokoro.Attribute;
+import com.weiboss.megumi.megumiitem.core.tadokoro.Attribute;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;

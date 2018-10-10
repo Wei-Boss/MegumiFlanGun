@@ -3,9 +3,9 @@ package com.weiboss.megumi.megumiitem.util;
 import com.weiboss.megumi.megumiitem.Main;
 import com.weiboss.megumi.megumiitem.constructor.*;
 import com.weiboss.megumi.megumiitem.file.Config;
-import com.weiboss.megumi.megumiitem.tadokoro.Attribute;
+import com.weiboss.megumi.megumiitem.core.tadokoro.Attribute;
 import com.weiboss.megumi.megumiitem.constructor.Template;
-import com.weiboss.megumi.megumiitem.tadokoro.Wear;
+import com.weiboss.megumi.megumiitem.core.tadokoro.Wear;
 import org.bukkit.inventory.ItemStack;
 
 import java.text.DecimalFormat;

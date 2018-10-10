@@ -2,7 +2,7 @@ package com.weiboss.megumi.megumiitem.util;
 
 import com.weiboss.megumi.megumiitem.Main;
 import com.weiboss.megumi.megumiitem.core.data.MegumiItem;
-import com.weiboss.megumi.megumiitem.tadokoro.Attribute;
+import com.weiboss.megumi.megumiitem.core.tadokoro.Attribute;
 import com.weiboss.megumi.megumiitem.file.Config;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;

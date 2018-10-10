@@ -1,4 +1,4 @@
-package com.weiboss.megumi.megumiitem.tadokoro;
+package com.weiboss.megumi.megumiitem.core.tadokoro;
 
 
 import com.weiboss.megumi.megumiitem.Main;

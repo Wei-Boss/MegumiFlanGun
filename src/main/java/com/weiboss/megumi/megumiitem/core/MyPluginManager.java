@@ -2,7 +2,7 @@ package com.weiboss.megumi.megumiitem.core;
 
 import com.weiboss.megumi.megumiitem.Main;
 import com.weiboss.megumi.megumiitem.constructor.Template;
-import com.weiboss.megumi.megumiitem.tadokoro.Wear;
+import com.weiboss.megumi.megumiitem.core.tadokoro.Wear;
 import com.weiboss.megumi.megumiitem.util.WeiUtil;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;

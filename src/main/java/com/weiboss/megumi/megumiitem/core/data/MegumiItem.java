@@ -1,6 +1,6 @@
 package com.weiboss.megumi.megumiitem.core.data;
 
-import com.weiboss.megumi.megumiitem.tadokoro.Attribute;
+import com.weiboss.megumi.megumiitem.core.tadokoro.Attribute;
 import com.weiboss.megumi.megumiitem.file.Config;
 import com.weiboss.megumi.megumiitem.util.FlanGunUtil;
 import com.weiboss.megumi.megumiitem.util.RegularUtil;

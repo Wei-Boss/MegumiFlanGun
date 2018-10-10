@@ -1,4 +1,4 @@
-package com.weiboss.megumi.megumiitem.tadokoro;
+package com.weiboss.megumi.megumiitem.core.tadokoro;
 
 public class Wear {
     private String name;
