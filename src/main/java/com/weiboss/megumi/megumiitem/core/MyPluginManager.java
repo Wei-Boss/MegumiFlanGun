@@ -8,6 +8,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class MyPluginManager {
     public void init() {
         YamlConfiguration config = plugin.getFileManager().getConfig();
 
-        for (String s : plugin.getFileManager().getWears()) {
+        for (String s : config.getConfigurationSection("Wear").getKeys(false)) {
             String name = WeiUtil.onReplace(config.getString("Wear." + s + ".Name"));
             Double min = config.getDouble("Wear." + s + ".Min");
             Double max = config.getDouble("Wear." + s + ".Max");
@@ -41,6 +42,10 @@ public class MyPluginManager {
 
     public HashMap<String, Wear> getWearMap() {
         return wearMap;
+    }
+
+    public List<String> getWears() {
+        return new ArrayList<>(wearMap.keySet());
     }
 
     public HashMap<Player, List<ItemStack>> getSoulboundItem() {

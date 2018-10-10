@@ -13,7 +13,6 @@ import java.util.*;
 
 public class FileManager {
     private Main plugin;
-    private List<String> wears;
     private File configFile;
     private File messageFile;
     private YamlConfiguration config;
@@ -21,7 +20,6 @@ public class FileManager {
 
     public FileManager(Main plugin) {
         this.plugin = plugin;
-        this.wears = Arrays.asList("FactoryNew", "MinimalWear", "FieldTested", "WellWorn", "BattleScarred");
     }
 
     public void init() {
@@ -103,7 +101,9 @@ public class FileManager {
             }
 
             List<WearRate> wear = new ArrayList<>();
-            for (String s : wears) {
+            for (String s : yaml.getConfigurationSection("Wear").getKeys(false)) {
+                List<String> wears = plugin.getMyPluginManager().getWears();
+                if (!wears.contains(s)) continue;
                 Double value = yaml.getDouble("Wear." + s);
                 wear.add(new WearRate(s, value));
             }
@@ -238,10 +238,6 @@ public class FileManager {
 
     public String getAttrName(String type) {
         return WeiUtil.onReplace(config.getString("Formats." + type));
-    }
-
-    public List<String> getWears() {
-        return wears;
     }
 
     public YamlConfiguration getConfig() {
