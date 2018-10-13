@@ -6,7 +6,7 @@ import com.weiboss.megumi.megumiitem.file.Message;
 import com.weiboss.megumi.megumiitem.core.data.MegumiItem;
 import com.weiboss.megumi.megumiitem.task.CheckEquipTask;
 import com.weiboss.megumi.megumiitem.task.OpenSoulGuiTask;
-import com.weiboss.megumi.megumiitem.util.FlanGunUtil;
+import com.weiboss.megumi.megumiitem.util.MegumiUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -82,7 +82,7 @@ public class SoulBoundListener implements Listener {
         Player p = e.getEntity();
         List<ItemStack> items = new ArrayList<>();
         for (ItemStack item : new ArrayList<>(e.getDrops())) {
-            if (FlanGunUtil.isBindUser(item, p) && !Config.SoulBound.DeathDrop) {
+            if (MegumiUtil.isBindUser(item, p) && !Config.SoulBound.DeathDrop) {
                 e.getDrops().remove(item);
                 items.add(item);
             }

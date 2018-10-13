@@ -74,105 +74,105 @@ public class TemplateUtil {
                 RangeValue range = attributes.get("Health");
                 if (range == null) continue;
                 double health = reservedTwo(range);
-                lore.add(FlanGunUtil.getAttrLore(Attribute.Health, health, false));
+                lore.add(MegumiUtil.getAttrLore(Attribute.Health, health, false));
                 continue;
             }
             if (s.equalsIgnoreCase("%damage%")) {
                 RangeValue range = attributes.get("Damage");
                 if (range == null) continue;
                 double damage = reservedTwo(range);
-                lore.add(FlanGunUtil.getAttrLore(Attribute.Damage, damage, false));
+                lore.add(MegumiUtil.getAttrLore(Attribute.Damage, damage, false));
                 continue;
             }
             if (s.equalsIgnoreCase("%defense%")) {
                 RangeValue range = attributes.get("Defense");
                 if (range == null) continue;
                 double defense = reservedTwo(range);
-                lore.add(FlanGunUtil.getAttrLore(Attribute.Defense, defense, false));
+                lore.add(MegumiUtil.getAttrLore(Attribute.Defense, defense, false));
                 continue;
             }
             if (s.equalsIgnoreCase("%ignoredamage%")) {
                 RangeValue range = attributes.get("IgnoreDamage");
                 if (range == null) continue;
                 double ignoreDamage = reservedTwo(range);
-                lore.add(FlanGunUtil.getAttrLore(Attribute.IgnoreDamage, ignoreDamage, false));
+                lore.add(MegumiUtil.getAttrLore(Attribute.IgnoreDamage, ignoreDamage, false));
                 continue;
             }
             if (s.equalsIgnoreCase("%ignoredefense%")) {
                 RangeValue range = attributes.get("IgnoreDefense");
                 if (range == null) continue;
                 double ignoreDefense = reservedTwo(range);
-                lore.add(FlanGunUtil.getAttrLore(Attribute.IgnoreDefense, ignoreDefense, false));
+                lore.add(MegumiUtil.getAttrLore(Attribute.IgnoreDefense, ignoreDefense, false));
                 continue;
             }
             if (s.equalsIgnoreCase("%vampire%")) {
                 RangeValue range = attributes.get("Vampire");
                 if (range == null) continue;
                 double vampire = reservedTwo(range);
-                lore.add(FlanGunUtil.getAttrLore(Attribute.Vampire, vampire, true));
+                lore.add(MegumiUtil.getAttrLore(Attribute.Vampire, vampire, true));
                 continue;
             }
             if (s.equalsIgnoreCase("%hitchance%")) {
                 RangeValue range = attributes.get("HitChance");
                 if (range == null) continue;
                 double hitChance = reservedTwo(range);
-                lore.add(FlanGunUtil.getAttrLore(Attribute.HitChance, hitChance, true));
+                lore.add(MegumiUtil.getAttrLore(Attribute.HitChance, hitChance, true));
                 continue;
             }
             if (s.equalsIgnoreCase("%dodgechance%")) {
                 RangeValue range = attributes.get("DodgeChance");
                 if (range == null) continue;
                 double dodgeChance = reservedTwo(range);
-                lore.add(FlanGunUtil.getAttrLore(Attribute.DodgeChance, dodgeChance, true));
+                lore.add(MegumiUtil.getAttrLore(Attribute.DodgeChance, dodgeChance, true));
                 continue;
             }
             if (s.equalsIgnoreCase("%wreckchance%")) {
                 RangeValue range = attributes.get("WreckChance");
                 if (range == null) continue;
                 double wreckChance = reservedTwo(range);
-                lore.add(FlanGunUtil.getAttrLore(Attribute.WreckChance, wreckChance, true));
+                lore.add(MegumiUtil.getAttrLore(Attribute.WreckChance, wreckChance, true));
                 continue;
             }
             if (s.equalsIgnoreCase("%blockchance%")) {
                 RangeValue range = attributes.get("BlockChance");
                 if (range == null) continue;
                 double blockChance = reservedTwo(range);
-                lore.add(FlanGunUtil.getAttrLore(Attribute.BlockChance, blockChance, true));
+                lore.add(MegumiUtil.getAttrLore(Attribute.BlockChance, blockChance, true));
                 continue;
             }
             if (s.equalsIgnoreCase("%blockrate%")) {
                 RangeValue range = attributes.get("BlockRate");
                 if (range == null) continue;
                 double blockRate = reservedTwo(range);
-                lore.add(FlanGunUtil.getAttrLore(Attribute.BlockRate, blockRate, true));
+                lore.add(MegumiUtil.getAttrLore(Attribute.BlockRate, blockRate, true));
                 continue;
             }
             if (s.equalsIgnoreCase("%critchance%")) {
                 RangeValue range = attributes.get("CritChance");
                 if (range == null) continue;
                 double critChance = reservedTwo(range);
-                lore.add(FlanGunUtil.getAttrLore(Attribute.CritChance, critChance, true));
+                lore.add(MegumiUtil.getAttrLore(Attribute.CritChance, critChance, true));
                 continue;
             }
             if (s.equalsIgnoreCase("%critrate%")) {
                 RangeValue range = attributes.get("CritRate");
                 if (range == null) continue;
                 double critRate = reservedTwo(range);
-                lore.add(FlanGunUtil.getAttrLore(Attribute.CritRate, critRate, true));
+                lore.add(MegumiUtil.getAttrLore(Attribute.CritRate, critRate, true));
                 continue;
             }
             if (s.equalsIgnoreCase("%antiknockchance%")) {
                 RangeValue range = attributes.get("AntiknockChance");
                 if (range == null) continue;
                 double antiknockChance = reservedTwo(range);
-                lore.add(FlanGunUtil.getAttrLore(Attribute.AntiknockChance, antiknockChance, true));
+                lore.add(MegumiUtil.getAttrLore(Attribute.AntiknockChance, antiknockChance, true));
                 continue;
             }
             if (s.equalsIgnoreCase("%movementspeed%")) {
                 RangeValue range = attributes.get("MovementSpeed");
                 if (range == null) continue;
                 double speed = reservedTwo(range);
-                lore.add(FlanGunUtil.getAttrLore(Attribute.MovementSpeed, speed, true));
+                lore.add(MegumiUtil.getAttrLore(Attribute.MovementSpeed, speed, true));
                 continue;
             }
             lore.add(WeiUtil.onReplace(s));

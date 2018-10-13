@@ -1,8 +1,8 @@
-package com.weiboss.megumi.megumiitem.listener;
+package com.weiboss.megumi.megumiitem.listener.gui;
 
 import com.weiboss.megumi.megumiitem.file.Config;
 import com.weiboss.megumi.megumiitem.file.Message;
-import com.weiboss.megumi.megumiitem.util.FlanGunUtil;
+import com.weiboss.megumi.megumiitem.util.MegumiUtil;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,7 +12,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-public class GuiListener implements Listener {
+public class SoulBoundListener implements Listener {
 
     @EventHandler(priority = EventPriority.HIGH)
     public void onSoulBound(InventoryClickEvent e) {
@@ -34,7 +34,7 @@ public class GuiListener implements Listener {
                     if (invItem.equals(bindItem)) {
                         ItemStack air = new ItemStack(Material.AIR);
                         p.getInventory().setItem(size, air);
-                        p.getInventory().addItem(FlanGunUtil.bindPlayer(p, bindItem));
+                        p.getInventory().addItem(MegumiUtil.bindPlayer(p, bindItem));
                         p.sendMessage(Config.Prefix + Message.SuccessBind);
                         p.closeInventory();
                         return;

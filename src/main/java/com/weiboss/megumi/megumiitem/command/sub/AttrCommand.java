@@ -5,7 +5,7 @@ import com.weiboss.megumi.megumiitem.command.WeiCommand;
 import com.weiboss.megumi.megumiitem.file.Config;
 import com.weiboss.megumi.megumiitem.file.Message;
 import com.weiboss.megumi.megumiitem.core.tadokoro.Attribute;
-import com.weiboss.megumi.megumiitem.util.FlanGunUtil;
+import com.weiboss.megumi.megumiitem.util.MegumiUtil;
 import com.weiboss.megumi.megumiitem.util.WeiUtil;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -37,7 +37,7 @@ public class AttrCommand extends WeiCommand {
             }
             String attr = Strings[1];
             String s = Strings[2];
-            if (!(FlanGunUtil.hasAttribute(attr))) {
+            if (!(MegumiUtil.hasAttribute(attr))) {
                 CommandSender.sendMessage(Config.Prefix + "&c该属性不存在");
                 return;
             }
@@ -50,7 +50,7 @@ public class AttrCommand extends WeiCommand {
             if (meta.getLore() != null) lore = meta.getLore();
             Attribute attribute = Attribute.valueOf(attr);
             float value = Float.valueOf(s);
-            lore.add(FlanGunUtil.getAttrLore(attribute, value, attribute.isRate()));
+            lore.add(MegumiUtil.getAttrLore(attribute, value, attribute.isRate()));
             meta.setLore(lore);
             item.setItemMeta(meta);
             p.sendMessage(Config.Prefix + "&a添加成功");

@@ -10,7 +10,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.List;
 
-public class FlanGunUtil {
+public class MegumiUtil {
     private static Main plugin = Main.getInstance();
 
     public static Attribute getAttrType(String s) {

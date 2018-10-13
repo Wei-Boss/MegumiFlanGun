@@ -97,3 +97,20 @@ Gui:
     Other:
       ID: 160
       Data: 11
+  Mosaic:
+    Title: '&7&l[&c&l宝石镶嵌&7&l]'
+    Confirm:
+      ID: 1
+      Data: 0
+      Name: '&8&l[&a确认&8&l]'
+      Lore:
+      - 'Confirm mosaic'
+    Close:
+      ID: 2
+      Data: 0
+      Name: '&8&l[&c退出&8&l]'
+      Lore:
+      - 'Close mosaic'
+    Other:
+      ID: 160
+      Data: 11

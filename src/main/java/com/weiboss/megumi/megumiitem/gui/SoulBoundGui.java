@@ -2,7 +2,7 @@ package com.weiboss.megumi.megumiitem.gui;
 
 import com.weiboss.megumi.megumiitem.Main;
 import com.weiboss.megumi.megumiitem.file.Config;
-import com.weiboss.megumi.megumiitem.util.FlanGunUtil;
+import com.weiboss.megumi.megumiitem.util.MegumiUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -37,7 +37,7 @@ public class SoulBoundGui {
     }
 
     private ItemStack getPreview(Player p, ItemStack item) {
-        ItemStack preview = FlanGunUtil.bindPlayer(p, item);
+        ItemStack preview = MegumiUtil.bindPlayer(p, item);
         ItemMeta meta = preview.getItemMeta();
         meta.setDisplayName(Config.PreviewDisplay);
         preview.setItemMeta(meta);

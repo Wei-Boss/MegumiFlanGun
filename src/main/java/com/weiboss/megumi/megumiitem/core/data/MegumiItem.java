@@ -2,7 +2,7 @@ package com.weiboss.megumi.megumiitem.core.data;
 
 import com.weiboss.megumi.megumiitem.core.tadokoro.Attribute;
 import com.weiboss.megumi.megumiitem.file.Config;
-import com.weiboss.megumi.megumiitem.util.FlanGunUtil;
+import com.weiboss.megumi.megumiitem.util.MegumiUtil;
 import com.weiboss.megumi.megumiitem.util.RegularUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -40,17 +40,17 @@ public class MegumiItem {
                         if (p != null) continue forItem;
                     }
                     if (RegularUtil.isLevelLimit(s)) {
-                        int i = FlanGunUtil.getLevelLimit(s);
+                        int i = MegumiUtil.getLevelLimit(s);
                         if (p != null && p.getLevel() < i) continue forItem;
                     }
                     if (RegularUtil.isSoulBound(s)) {
-                        if (p != null && !p.getName().equalsIgnoreCase(FlanGunUtil.getSoulBound(s))) continue forItem;
+                        if (p != null && !p.getName().equalsIgnoreCase(MegumiUtil.getSoulBound(s))) continue forItem;
                     }
                     if (RegularUtil.isAttribute(s) || RegularUtil.isCritRate(s)) {
                         s = clear(s);
                         String attribute = s.split(Config.Attr.Part)[0];
                         String value = s.split(Config.Attr.Part)[1];
-                        Attribute attr = FlanGunUtil.getAttrType(attribute);
+                        Attribute attr = MegumiUtil.getAttrType(attribute);
                         float f = Float.valueOf(value);
                         if (attr == null) continue;
                         switch (attr) {
@@ -139,15 +139,15 @@ public class MegumiItem {
                         continue;
                     }
                     if (RegularUtil.isLevelLimit(s)) {
-                        this.levelLimit = FlanGunUtil.getLevelLimit(s);
+                        this.levelLimit = MegumiUtil.getLevelLimit(s);
                         continue;
                     }
                     if (RegularUtil.isSoulBound(s)) {
-                        this.bindUser = FlanGunUtil.getSoulBound(s);
+                        this.bindUser = MegumiUtil.getSoulBound(s);
                         continue;
                     }
                     if (RegularUtil.isWearValue(s)) {
-                        this.wearValue = FlanGunUtil.getWearValue(s);
+                        this.wearValue = MegumiUtil.getWearValue(s);
                         continue;
                     }
                     continue;
@@ -155,7 +155,7 @@ public class MegumiItem {
                 s = clear(s);
                 String attribute = s.split(Config.Attr.Part)[0];
                 String value = s.split(Config.Attr.Part)[1];
-                Attribute attr = FlanGunUtil.getAttrType(attribute);
+                Attribute attr = MegumiUtil.getAttrType(attribute);
                 float f = Float.valueOf(value);
                 if (attr == null) continue;
                 switch (attr) {
