@@ -114,3 +114,26 @@ Gui:
     Other:
       ID: 160
       Data: 11
+  Select:
+    Title: '&7&l[&c&l选择一件装备&7&l]'
+    Close:
+      ID: 2
+      Data: 0
+      Name: '&8&l[&c退出&8&l]'
+      Lore:
+      - 'Close mosaic'
+    UpPage:
+      ID: 5
+      Data: 0
+      Name: '[上一页]'
+      Lore:
+      - '上一页'
+    NextPage:
+      ID: 4
+      Data: 0
+      Name: '[下一页]'
+      Lore:
+      - '下一页'
+    Other:
+      ID: 160
+      Data: 11

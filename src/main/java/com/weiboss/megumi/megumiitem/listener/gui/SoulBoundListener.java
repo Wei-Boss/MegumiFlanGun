@@ -23,7 +23,7 @@ public class SoulBoundListener implements Listener {
         if (item == null ||item.getItemMeta() == null) return;
         if (gui.getTitle().equalsIgnoreCase(Config.Gui.SoulBound_Title)) {
             e.setCancelled(true);
-            if (item.equals(Config.Gui.SoulBound_Confirm)) {
+            if (item.equals(Config.Gui.getButton("Gui.SoulBound.Confirm", 1))) {
                 ItemStack bindItem = gui.getItem(11);
                 int size = 0;
                 for (ItemStack invItem : p.getInventory().getContents()) {

@@ -59,52 +59,18 @@ public class Config {
 
     public static class Gui {
         public final static String SoulBound_Title = get("Gui.SoulBound.Title");
-        public final static ItemStack SoulBound_Confirm = WeiUtil.createItem
-                (
-                        getConfig().getString("Gui.SoulBound.Confirm.ID"),
-                        getConfig().getInt("Gui.SoulBound.Confirm.Data"),
-                        1,
-                        getConfig().getString("Gui.SoulBound.Confirm.Name"),
-                        getConfig().getStringList("Gui.SoulBound.Confirm.Lore"),
-                        null
-                );
-        public final static ItemStack SoulBound_Other = WeiUtil.createItem
-                (
-                        getConfig().getString("Gui.SoulBound.Other.ID"),
-                        getConfig().getInt("Gui.SoulBound.Other.Data"),
-                        1,
-                        null,
-                        null,
-                        null
-                );
-
         public final static String Mosaic_Title = get("Gui.Mosaic.Title");
-        public final static ItemStack Mosaic_Confirm = WeiUtil.createItem
-                (
-                        getConfig().getString("Gui.Mosaic.Confirm.ID"),
-                        getConfig().getInt("Gui.Mosaic.Confirm.Data"),
-                        1,
-                        getConfig().getString("Gui.Mosaic.Confirm.Name"),
-                        getConfig().getStringList("Gui.Mosaic.Confirm.Lore"),
-                        null
-                );
-        public final static ItemStack Mosaic_Close = WeiUtil.createItem
-                (
-                        getConfig().getString("Gui.Mosaic.Close.ID"),
-                        getConfig().getInt("Gui.Mosaic.Close.Data"),
-                        1,
-                        getConfig().getString("Gui.Mosaic.Close.Name"),
-                        getConfig().getStringList("Gui.Mosaic.Close.Lore"),
-                        null
-                );
-        public final static ItemStack Mosaic_Other = WeiUtil.createItem
-                (
-                        getConfig().getString("Gui.Mosaic.Other.ID"),
-                        getConfig().getInt("Gui.Mosaic.Other.Data"),
-                        1,
-                        null,
-                        null,
-                        null
-                );
+        public final static String Select_Title = get("Gui.Select.Title");
+
+        public static ItemStack getButton(String path, int amount) {
+            return WeiUtil.createItem(
+                    getConfig().getString(path + ".ID"),
+                    getConfig().getInt(path + ".Data"),
+                    amount,
+                    get(path + ".Name"),
+                    getConfig().getStringList(path + ".Lore"),
+                    null
+            );
+        }
     }
 }

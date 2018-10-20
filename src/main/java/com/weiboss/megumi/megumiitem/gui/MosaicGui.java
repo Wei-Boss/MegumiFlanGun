@@ -29,9 +29,9 @@ public class MosaicGui {
         List<Integer> list = Arrays.asList(13, 28, 29, 30, 31, 32, 33, 34, 47, 51);
         for (int size = 0; size < 54; size++) {
             if (list.contains(size)) continue;
-            gui.setItem(size, Config.Gui.Mosaic_Other);
+            gui.setItem(size, Config.Gui.getButton("Gui.Mosaic.Other", 1));
         }
-        gui.setItem(47, Config.Gui.SoulBound_Confirm);
-        gui.setItem(51, Config.Gui.Mosaic_Close);
+        gui.setItem(47, Config.Gui.getButton("Gui.Mosaic.Confirm", 1));
+        gui.setItem(51, Config.Gui.getButton("Gui.Mosaic.Close", 1));
     }
 }

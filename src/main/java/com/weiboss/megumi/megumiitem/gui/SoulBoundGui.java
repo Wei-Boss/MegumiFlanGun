@@ -23,14 +23,14 @@ public class SoulBoundGui {
         addContent();
         gui.setItem(11, item);
         gui.setItem(15, getPreview(p, item));
-        gui.setItem(22, Config.Gui.SoulBound_Confirm);
+        gui.setItem(22, Config.Gui.getButton("Gui.SoulBound.Confirm", 1));
         p.openInventory(gui);
     }
 
     private void addContent() {
         int size = 26;
         do {
-            gui.setItem(size, Config.Gui.SoulBound_Other);
+            gui.setItem(size, Config.Gui.getButton("Gui.SoulBound.Other", 1));
             size--;
         }
         while (size >= 0);

@@ -24,12 +24,12 @@ public class MosaicListener implements Listener {
         int clickSlot = e.getSlot();
         List<Integer> list = Arrays.asList(29, 30, 31, 32, 33, 34);
         if (!list.contains(clickSlot) || clickSlot > 53) e.setCancelled(true);
-        if (item.equals(Config.Gui.Mosaic_Close)) {
+        if (item.equals(Config.Gui.getButton("Gui.Mosaic.Close", 1))) {
             e.setCancelled(true);
             p.closeInventory();
             return;
         }
-        if (item.equals(Config.Gui.Mosaic_Confirm)) {
+        if (item.equals(Config.Gui.getButton("Gui.Mosaic.Confirm", 1))) {
 
         }
     }
