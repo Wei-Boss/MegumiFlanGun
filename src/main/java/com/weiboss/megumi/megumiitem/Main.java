@@ -33,8 +33,8 @@ public class Main extends JavaPlugin {
         fileManager.initFolder();
         myPluginManager.init();
         eventManager.init();
-        getCommand("gun").setExecutor(new MainCommand());
-        getCommand("gun").setTabCompleter(new MainComplete(this));
+        getCommand("mitem").setExecutor(new MainCommand());
+        getCommand("mitem").setTabCompleter(new MainComplete(this));
         getLogger().info("Loaded successfully");
     }
 

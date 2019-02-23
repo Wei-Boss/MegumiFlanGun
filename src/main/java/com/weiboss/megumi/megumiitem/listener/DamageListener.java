@@ -44,6 +44,7 @@ public class DamageListener implements Listener {
             ReflectionUtil util = new ReflectionUtil(plugin.getVersion());
             owner = util.getOwner(damage);
         }
+        if (owner == null) return;
 
         if (!(owner instanceof LivingEntity && entity instanceof LivingEntity)) return;
 

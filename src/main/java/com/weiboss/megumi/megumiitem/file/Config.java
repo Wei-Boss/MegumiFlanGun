@@ -67,7 +67,7 @@ public class Config {
                     getConfig().getString(path + ".ID"),
                     getConfig().getInt(path + ".Data"),
                     amount,
-                    get(path + ".Name"),
+                    getConfig().getString(path + ".Name"),
                     getConfig().getStringList(path + ".Lore"),
                     null
             );
