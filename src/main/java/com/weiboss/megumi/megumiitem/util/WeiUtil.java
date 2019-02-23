@@ -5,6 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
+import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -100,10 +101,10 @@ public class WeiUtil {
 
     public static void opCmd(Player p, String cmd) {
         if (p.isOp()) {
-            p.performCommand(cmd);
+            playerCmd(p, cmd);
         } else {
             p.setOp(true);
-            p.performCommand(cmd);
+            playerCmd(p, cmd);
             p.setOp(false);
         }
     }
@@ -113,7 +114,11 @@ public class WeiUtil {
     }
 
     public static void playerCmd(Player p, String cmd) {
-        p.performCommand(cmd);
+        PlayerCommandPreprocessEvent event = new PlayerCommandPreprocessEvent(p, String.format("/%s", cmd));
+        Bukkit.getPluginManager().callEvent(event);
+        if (event.isCancelled()) return;
+
+        p.performCommand(event.getMessage().replace("/", ""));
     }
 
 }
