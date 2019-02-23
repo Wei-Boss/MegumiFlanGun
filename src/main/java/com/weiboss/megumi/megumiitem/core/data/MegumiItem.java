@@ -4,11 +4,12 @@ import com.weiboss.megumi.megumiitem.core.tadokoro.Attribute;
 import com.weiboss.megumi.megumiitem.file.Config;
 import com.weiboss.megumi.megumiitem.util.MegumiUtil;
 import com.weiboss.megumi.megumiitem.util.RegularUtil;
+import lombok.Data;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-
+@Data
 public class MegumiItem {
     private ItemStack item;
     private Boolean trade;
@@ -209,42 +210,6 @@ public class MegumiItem {
             catch (Exception ignored) {
             }
         }
-    }
-
-    public ItemStack getItem() {
-        return item;
-    }
-
-    public Boolean getTrade() {
-        return trade;
-    }
-
-    public Boolean getBind() {
-        return bind;
-    }
-
-    public Integer getStatTrak() {
-        return statTrak;
-    }
-
-    public Integer getLevelLimit() {
-        return levelLimit;
-    }
-
-    public Double getWearValue() {
-        return wearValue;
-    }
-
-    public String getBindUser() {
-        return bindUser;
-    }
-
-    public AttrData getAttrData() {
-        return attrData;
-    }
-
-    public void setAttrData(AttrData attrData) {
-        this.attrData = attrData;
     }
 
     private String clear(String s) {

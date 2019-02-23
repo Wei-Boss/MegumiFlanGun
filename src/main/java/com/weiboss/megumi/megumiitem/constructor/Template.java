@@ -1,8 +1,11 @@
 package com.weiboss.megumi.megumiitem.constructor;
 
+import lombok.Data;
+
 import java.util.HashMap;
 import java.util.List;
 
+@Data
 public class Template {
     private String name;
     private String suffix;
@@ -26,45 +29,5 @@ public class Template {
         this.attributes = attributes;
         this.feature = feature;
         this.wears = wears;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getSuffix() {
-        return suffix;
-    }
-
-    public RangeValue getLevelLimit() {
-        return levelLimit;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public Integer getData() {
-        return data;
-    }
-
-    public String getDisplay() {
-        return display;
-    }
-
-    public List<String> getLore() {
-        return lore;
-    }
-
-    public HashMap<String, RangeValue> getAttributes() {
-        return attributes;
-    }
-
-    public HashMap<String, Boolean> getFeature() {
-        return feature;
-    }
-
-    public List<WearRate> getWears() {
-        return wears;
     }
 }

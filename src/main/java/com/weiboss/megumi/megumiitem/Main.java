@@ -6,16 +6,17 @@ import com.weiboss.megumi.megumiitem.core.MyPluginManager;
 import com.weiboss.megumi.megumiitem.gui.GuiManager;
 import com.weiboss.megumi.megumiitem.listener.EventManager;
 import com.weiboss.megumi.megumiitem.command.MainComplete;
+import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
-    private static Main instance;
-    private FileManager fileManager;
-    private MyPluginManager myPluginManager;
-    private GuiManager guiManager;
-    private EventManager eventManager;
+    @Getter private static Main instance;
+    @Getter private FileManager fileManager;
+    @Getter private MyPluginManager myPluginManager;
+    @Getter private GuiManager guiManager;
+    @Getter private EventManager eventManager;
 
     @EventHandler
     public void onEnable() {
@@ -36,22 +37,6 @@ public class Main extends JavaPlugin {
     @EventHandler
     public void onDisable() {
         getLogger().info("Uninstall successfully");
-    }
-
-    public static Main getInstance() {
-        return instance;
-    }
-
-    public FileManager getFileManager() {
-        return fileManager;
-    }
-
-    public MyPluginManager getMyPluginManager() {
-        return myPluginManager;
-    }
-
-    public GuiManager getGuiManager() {
-        return guiManager;
     }
 
     public String getVersion() {

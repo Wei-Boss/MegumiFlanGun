@@ -1,10 +1,12 @@
 package com.weiboss.megumi.megumiitem.core.data;
 
+import lombok.Data;
 import org.bukkit.Bukkit;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Data
 public class AttrData {
     private double health;
     private double damage;
@@ -130,126 +132,6 @@ public class AttrData {
 
     public void addMovementSpeed(double movementSpeed) {
         this.movementSpeed += movementSpeed;
-    }
-
-    public void setHealth(double health) {
-        this.health = health;
-    }
-
-    public void setDamage(double damage) {
-        this.damage = damage;
-    }
-
-    public void setDefense(double defense) {
-        this.defense = defense;
-    }
-
-    public void setIgnoreDamage(double ignoreDamage) {
-        this.ignoreDamage = ignoreDamage;
-    }
-
-    public void setIgnoreDefense(double ignoreDefense) {
-        this.ignoreDefense = ignoreDefense;
-    }
-
-    public void setVampire(double vampire) {
-        this.vampire = vampire;
-    }
-
-    public void setHitChance(double hitChance) {
-        this.hitChance = hitChance;
-    }
-
-    public void setDodgeChance(double dodgeChance) {
-        this.dodgeChance = dodgeChance;
-    }
-
-    public void setWreckChance(double wreckChance) {
-        this.wreckChance = wreckChance;
-    }
-
-    public void setBlockChance(double blockChance) {
-        this.blockChance = blockChance;
-    }
-
-    public void setBlockRate(double blockRate) {
-        this.blockRate = blockRate;
-    }
-
-    public void setCritChance(double critChance) {
-        this.critChance = critChance;
-    }
-
-    public void setCritRate(double critRate) {
-        this.critRate = critRate;
-    }
-
-    public void setAntiKnockChance(double antiKnockChance) {
-        this.antiKnockChance = antiKnockChance;
-    }
-
-    public void setMovementSpeed(double movementSpeed) {
-        this.movementSpeed = movementSpeed;
-    }
-
-    public double getHealth() {
-        return health;
-    }
-
-    public double getDamage() {
-        return damage;
-    }
-
-    public double getDefense() {
-        return defense;
-    }
-
-    public double getIgnoreDamage() {
-        return ignoreDamage;
-    }
-
-    public double getIgnoreDefense() {
-        return ignoreDefense;
-    }
-
-    public double getVampire() {
-        return vampire;
-    }
-
-    public double getHitChance() {
-        return hitChance;
-    }
-
-    public double getDodgeChance() {
-        return dodgeChance;
-    }
-
-    public double getWreckChance() {
-        return wreckChance;
-    }
-
-    public double getBlockChance() {
-        return blockChance;
-    }
-
-    public double getBlockRate() {
-        return blockRate;
-    }
-
-    public double getCritChance() {
-        return critChance;
-    }
-
-    public double getCritRate() {
-        return critRate;
-    }
-
-    public double getAntiKnockChance() {
-        return antiKnockChance;
-    }
-
-    public double getMovementSpeed() {
-        return movementSpeed;
     }
 
     public void showInfo() {
