@@ -23,11 +23,11 @@ public class MainCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
-        Object cmd = help;
+        WeiCommand cmd = help;
         if (strings.length >= 1 && commands.containsKey(strings[0])) {
             cmd = commands.get(strings[0]);
         }
-        ((WeiCommand) cmd).execute(commandSender, strings);
+        cmd.execute(commandSender, strings);
         return false;
     }
 }
