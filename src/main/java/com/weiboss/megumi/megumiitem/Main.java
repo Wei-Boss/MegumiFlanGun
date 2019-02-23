@@ -20,11 +20,6 @@ public class Main extends JavaPlugin {
     @EventHandler
     public void onEnable() {
         instance = this;
-        if (Bukkit.getPluginManager().getPlugin("HolographicDisplays") == null) {
-            getLogger().info("Hook: Associated holographicDisplays failed");
-            Bukkit.getPluginManager().disablePlugin(this);
-            return;
-        }
         fileManager = new FileManager(this);
         myPluginManager = new MyPluginManager(this);
         guiManager = new GuiManager(this);
