@@ -65,7 +65,7 @@ public class RegularUtil {
 
     private static String filter(String s) {
         s = ChatColor.stripColor(s.replace(" ", ""));
-        String regEx = "[`~!@#$^&*()\\-+={}':;,\\[\\].<>/?￥…（）_+|【】‘；：”“’。，、？\\s]";
+        String regEx = "[`~!@#$^&*()\\-+={}':;,\\[\\].<>/?￥…（）+|【】‘；：”“’。，、？\\s]";
         Pattern p = Pattern.compile(regEx);
         Matcher m = p.matcher(s);
         return m.replaceAll("").trim();
